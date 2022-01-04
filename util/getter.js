@@ -59,15 +59,15 @@ export const getLatestProjects = () => {
 
 
 export const getAllProjectSlugs = () => {
-  const files = fs.readdirSync(path.join(BLOGS_PATH))
-  return files.map((proj) => {
-    const file = fs.readFileSync(path.join(`${BLOGS_PATH}/${proj}`))
-    const slug = proj.replace(".md", "")
-
-    return slug
-  })
+  const files = fs.readdirSync(path.join(PROJECTS_PATH))
+  return files.map((proj) => ({ params: { slug: blog.replace(".md", "")}}))
 }
 
 export const getProjectBySlug = (slug) => {
-    // TODO
+  const file = fs.readFileSync(path.join(`${PROJECTS_PATH}/${slug}.md`), 'utf-8')
+  const { data, content } = matter(file)
+  return {
+    data,
+    content
   }
+}
