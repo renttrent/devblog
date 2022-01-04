@@ -20,11 +20,11 @@ export default function Header() {
           <Link href="/">
             <a>home</a>
           </Link>
-          <a href="">about</a>
+          <a href="/about">about</a>
           <Link href="/blog">
             <a>blog</a>
           </Link>
-          <a href="">projects</a>
+          <a href="/projects">projects</a>
         </div>
       </div>
     </>

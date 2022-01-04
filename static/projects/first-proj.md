@@ -1,5 +1,5 @@
 ---
-type: project
+type: projects
 title: First Project
 date: January 1 2021
 desc: This is my first ever project
