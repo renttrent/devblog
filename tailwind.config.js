@@ -9,6 +9,13 @@ module.exports = {
           200: "#4BBEE3"
         },
       },
+      backgroundSize: {
+        'size-200': '200% 200%',
+      },
+      backgroundPosition: {
+        'pos-0': '0% 0%',
+        'pos-100': '100% 100%',
+      },
     },
     fontFamily: {
       sans: ["Lato", "sans-serif"],
