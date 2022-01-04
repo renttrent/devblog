@@ -1,7 +1,10 @@
 import { FaTwitter, FaGithub } from "react-icons/fa"
 import Link from "next/link"
+import { getAllBlogSlugs, getLatestBlogs, getLatestProjects } from "../util/getter";
+import Card from "../components/card";
+import { FaBriefcase } from "react-icons/fa"
 
-export default function Home() {
+export default function Home({blogs, projects}) {
   return (
     <>
       <div className="home-section md:w-3/4 xl:1/3 lg:w-1/2 w-8/12 mx-auto">
@@ -24,17 +27,38 @@ export default function Home() {
             </span>
           </span>
         </div>
+        <div className="construction w-full text-center text-lg text-white
+        bg-gradient-to-br from-red-600 to-orange-500 p-4 rounded-xl mt-5 mb-5">
+          Website under construction! <FaBriefcase className="inline-block mb-1 ml-2" />
+        </div>
         <div className="latest-projects">
           <div className="font-mono text-lg font-bold mt-4">
             Latest Projects
           </div>
+          <div className="projects flex flex-row gap-4">
+            {projects && projects.map((proj, index) => (<Card key={index} data={proj}/>))}
+          </div>
           <div className="projects-grid"></div>
         </div>
-        <div className="latest-blogs">
+        <div className="latest-blogs mb-9">
           <div className="font-mono text-lg font-bold mt-4">Latest Blogs</div>
-          <div className="blogs-grid"></div>
+          <div className="blogs flex flex-row gap-4 sm:flex-wrap md:flex-nowrap">
+            {blogs && blogs.map((blog, index) => (<Card key={index} data={blog}/>))}
+          </div>
         </div>
       </div>
     </>
   );
+}
+
+
+export const getStaticProps = async () => {
+  const latest_blogs = getLatestBlogs()
+  const latest_projects = getLatestProjects()
+  return {
+    props: {
+      blogs: latest_blogs,
+      projects: latest_projects
+    }
+  }
 }
