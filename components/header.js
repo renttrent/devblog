@@ -18,13 +18,22 @@ export default function Header() {
       <div className="bg-zima-200 text-white p-3">
         <div className="flex flex-row justify-between w-8/12 md:w-3/4 xl:1/3 lg:w-1/2 mx-auto text-center font-mono font-semibold">
           <Link href="/">
+
             <a>home</a>
+
           </Link>
-          <a href="/about">about</a>
+          <Link href="/about">
+            <a>about</a>
+          </Link>
+
+
           <Link href="/blog">
             <a>blog</a>
           </Link>
-          <a href="/projects">projects</a>
+          <Link href="/projects">
+            <a>projects</a>
+          </Link>
+          
         </div>
       </div>
     </>
