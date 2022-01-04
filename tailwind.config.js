@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        zima: "#4BBEE3",
+        zima: {
+          100: "#EAF2F4",
+          200: "#4BBEE3"
+        },
       },
     },
     fontFamily: {
