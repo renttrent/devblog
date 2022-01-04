@@ -34,18 +34,18 @@ export default function Header() {
     
       <div className="bg-zima-200 text-white p-3 ">
         
-        <div className="z-20 flex flex-row justify-between w-8/12 md:w-3/4 xl:1/3 lg:w-1/2 mx-auto text-center text-lg font-mono font-semibold">
+        <div className="z-20 flex flex-row justify-between w-11/12 md:max-w-screen-lg mx-auto text-center text-lg font-mono font-semibold">
           <Link href="/">
             <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700">home</a>
           </Link>
           <Link href="/about">
-            <a>about</a>
-          </Link>
-          <Link href="/blog">
-            <a>blog</a>
+            <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700">about</a>
           </Link>
           <Link href="/projects">
-            <a>projects</a>
+            <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700">projects</a>
+          </Link>
+          <Link href="/blog">
+            <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700">blog</a>
           </Link>
         </div>
         {/* <div ref={ref} className="hidden z-0"></div> */}
