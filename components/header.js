@@ -8,7 +8,7 @@ export default function Header() {
         <Typical
           steps={
             [
-              'Hey there!', 300,
+              'Hey there!', 1000,
               'rei(thedev);', 1000,
             ]
           }
