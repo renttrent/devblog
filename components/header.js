@@ -1,22 +1,7 @@
 import Link from "next/link";
-import { useRef } from "react";
 import Typical from "react-typical"
 
 export default function Header() {
-
-  const ref = useRef()
-
-  // const aroundMouse = (e) => {
-    
-  //   ref.current.className = `absolute w-12 h-12 rounded bg-indigo-700 rounded-full opacity-60`
-  //   ref.current.style.left = `${e.pageX-20}px`
-  //   ref.current.style.top = `${e.pageY-20}px`
-  // }
-
-  // const deleteMouse = (e) => {
-  //   ref.current.className = "hidden"
-  // }
-  //onMouseOver={aroundMouse} onMouseLeave={deleteMouse}
 
   return (
     <>
@@ -48,7 +33,6 @@ export default function Header() {
             <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700">blog</a>
           </Link>
         </div>
-        {/* <div ref={ref} className="hidden z-0"></div> */}
       </div>
     </>
   );
