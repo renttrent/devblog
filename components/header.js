@@ -38,11 +38,15 @@ export default function Header() {
           <Link href="/">
             <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700">home</a>
           </Link>
-          <a href="/about">about</a>
+          <Link href="/about">
+            <a>about</a>
+          </Link>
           <Link href="/blog">
             <a>blog</a>
           </Link>
-          <a href="/projects">projects</a>
+          <Link href="/projects">
+            <a>projects</a>
+          </Link>
         </div>
         {/* <div ref={ref} className="hidden z-0"></div> */}
       </div>
