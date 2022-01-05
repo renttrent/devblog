@@ -21,7 +21,7 @@ export const getStaticProps = async  ({ params: { slug }}) => {
 export default function Blog({blog}) {
   return (
     <>
-      <div className="container mx-auto mt-10 max-w-screen-lg w-2/3">
+      <div className="container mx-auto mt-10 w-11/12 md:w-2/3">
         <div className="title font-bold text-2xl mb-2">{blog.data.title}</div>
         <div className="date font-semibold text-lg text-gray-600">{blog.data.date}</div>
         <div className="image mt-4">
