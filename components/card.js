@@ -10,7 +10,7 @@ const Card = ({data}) => {
       <Link href={`${data.type}/${data.slug}`}>
         <button className="transition-all duration-200 text-center mt-4 p-2 text-white rounded-md
          bg-gradient-to-tl from-zima-200 via-zima-200 to-indigo-400 bg-size-200 bg-pos-0 
-         hover:bg-pos-100 mb-4">
+         hover:bg-pos-100 mb-4 focus:outline-indigo-700">
           Go to {data.type}
         </button>
       </Link>

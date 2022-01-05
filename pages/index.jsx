@@ -19,10 +19,10 @@ export default function Home({blogs, projects}) {
             <b>dm</b> me in my socials:
             <span className="flex flex-row gap-4 text-zima-200 pt-2">
               <Link href="https://twitter.com/reithedev">
-                <a><FaTwitter /></a>
+                <a className="outline-none focus:text-red-500"><FaTwitter /></a>
               </Link>
               <Link href="https://github.com/renttrent">
-                <a><FaGithub /></a>
+                <a className="outline-none focus:text-red-500"><FaGithub /></a>
               </Link>
             </span>
           </span>
