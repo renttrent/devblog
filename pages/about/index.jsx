@@ -1,4 +1,26 @@
-export default function About() {
+import emailjs from "emailjs-com"
+import{ init } from '@emailjs/browser'
+import { useState } from "react"
+
+
+
+export default function About({type, template, service, userid} ) {
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    emailjs.sendForm(service, template, e.target, userid)
+    .then((res) => {
+      setSuccess(true)
+      setError(false)
+    }, (error) => {
+      setSuccess(false)
+      setError(true)
+    })
+    e.target.reset()
+  }
+
   return (
     <div className="container mx-auto w-11/12 md:max-w-screen-lg mt-10">
       <div className="text-4xl font-bold text-center">About me</div>
@@ -14,21 +36,40 @@ export default function About() {
           <img src="profile.jpg" className="rounded-full shadow-lg shadow-gray-300" />
         </div>
       </div>
-      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={sendEmail}>
+        {success && <div className="success bg-green-500 text-white w-full py-4 rounded-lg text-center shadow-lg text-lg">Email sent</div>}
+        {error && <div className="error bg-red-500 text-white w-full py-4 rounded-lg mt-4 text-center shadow-lg text-lg">Could not send email</div>}
+        <div className="mt-4">
+          <label className="text-gray-700 text-lg font-bold">Name</label>
+          <input type="text" className="mt-2 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your name is?" name="name" required />
+        </div>
         <div className="mt-4">
           <label className="text-gray-700 text-lg font-bold">Email</label>
-          <input type="email" className="mt-2 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Write your email" />
+          <input type="email" className="mt-2 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Write your email" name="email" required />
         </div>
         <div className="mt-4">
           <label className="text-gray-700 text-lg font-bold">Subject</label>
-          <input type="text" className="mt-2 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="What topic you want to talk about?" />
+          <input type="text" className="mt-2 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="What topic you want to talk about?" name="subject" required/>
         </div>
         <div className="mt-4">
           <label className="text-gray-700 text-lg font-bold">Content</label>
-          <textarea rows="5"  className="mt-2 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email size doesn't matter ;)" />
+          <textarea rows="5"  className="mt-2 shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email size doesn't matter ;)" name="content" required/>
         </div>
-        <button className="mt-4 transition ease-in duration-200 bg-fuchsia-600 text-white py-2 px-12 rounded-xl hover:bg-fuchsia-500 text-xl focus:outline-fuchsia-200">SEND</button>
+        <input type="submit" className="mt-4 cursor-pointer transition ease-in duration-200 bg-fuchsia-600 text-white py-2 px-12 rounded-xl hover:bg-fuchsia-500 text-xl focus:outline-fuchsia-200" />
       </form>
+
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  init(process.env.EMAIL_JS_USER_ID)
+  return {
+    props: {
+      type: process.env.EMAIL_JS_TYPE,
+      template: process.env.EMAIL_JS_TEMPLATE, 
+      service: process.env.EMAIL_JS_SERVICE,
+      userid: process.env.EMAIL_JS_USER_ID
+    }
+  }
 }
