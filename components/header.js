@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Typical from "react-typical"
+import { motion } from "framer-motion"
 
 export default function Header() {
-
+  
   return (
     <>
       <div className="font-mono font-extrabold text-gray-900 mx-auto text-center p-4 text-lg">
@@ -17,23 +18,23 @@ export default function Header() {
         </Typical>
       </div>
     
-      <div className="bg-zima-200 text-white p-3 ">
+      <motion.div className="bg-zima-200 text-white p-3 ">
         
         <div className="z-20 flex flex-row justify-between w-11/12 md:max-w-screen-lg mx-auto text-center text-lg font-mono font-semibold">
           <Link href="/">
-            <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700 outline-none focus-visible:outline-indigo-700 focus-visible:outline-offset-4">home</a>
+            <motion.a whileHover={{ scale: 1.1 }} className="transition-all ease-in cursor-pointer hover:text-indigo-400 outline-none focus-visible:outline-indigo-400 focus-visible:outline-offset-4">home</motion.a>
           </Link>
           <Link href="/about">
-            <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700 outline-none focus-visible:outline-indigo-700 focus-visible:outline-offset-4 ">about</a>
+            <motion.a whileHover={{ scale: 1.1 }} className="transition-all ease-in cursor-pointer hover:text-indigo-400 outline-none focus-visible:outline-indigo-400 focus-visible:outline-offset-4 ">about</motion.a>
           </Link>
           <Link href="/projects">
-            <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700 outline-none focus-visible:outline-indigo-700 focus-visible:outline-offset-4 ">projects</a>
+            <motion.a whileHover={{ scale: 1.1 }} className="transition-all ease-in cursor-pointer hover:text-indigo-400 outline-none focus-visible:outline-indigo-400 focus-visible:outline-offset-4 ">projects</motion.a>
           </Link>
           <Link href="/blog">
-            <a className="transition-all ease-in bg-clip-text hover:text-transparent bg-gradient-to-b from-zima-200 to-indigo-700 outline-none focus-visible:outline-indigo-700 focus-visible:outline-offset-4 ">blog</a>
+            <motion.a whileHover={{ scale: 1.1 }} className="transition-all ease-in cursor-pointer hover:text-indigo-400 outline-none focus-visible:outline-indigo-400 focus-visible:outline-offset-4 ">blog</motion.a>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
