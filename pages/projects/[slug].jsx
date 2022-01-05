@@ -27,7 +27,7 @@ export default function Project({project}) {
         <div className="image mt-4">
           <img src={project.data.cover_img} className="object-cover w-full max-h-80" />
         </div>
-        <div className="content mx-auto max-w-screen-lg prose mt-10 prose-p:text-justify">
+        <div className="content mx-auto max-w-screen-lg prose mt-10 prose-p:text-justify prose-p:mt-2 prose-h1:mb-4 prose-hr:m-0">
           <div dangerouslySetInnerHTML={{ __html: marked(project.content) }}></div>
         </div>
       </div>

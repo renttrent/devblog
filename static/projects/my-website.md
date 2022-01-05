@@ -8,11 +8,10 @@ cover_img: https://avatars.githubusercontent.com/u/37352219?v=4
 
 # My website
 ------
-
 This is my first public project and my first website.
 You can check the code out [here](https://github.com/renttrent/devblog).
 
-#### Technologies and packages used:
+### Technologies and packages used:
 
 - ReactJS
 - NextJS
@@ -21,4 +20,4 @@ You can check the code out [here](https://github.com/renttrent/devblog).
 - Gray Matter
 - Marked
 
-> I will porbably redisgn the website when I have some time.
+I will porbably redisgn the website when I have some time.
