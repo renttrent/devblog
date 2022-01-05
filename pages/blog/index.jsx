@@ -2,7 +2,6 @@ import Card from "../../components/card";
 import { getBlogsMeta } from "../../util/getter";
 
 export default function Blog({blogs}) {
-  console.log(blogs)
   return (
     <div className="container w-11/12 md:w-2/3 mx-auto mt-10 max-w-screen-lg">
       {/* <div>rei(blog);</div> */}
