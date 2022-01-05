@@ -1,21 +1,26 @@
 import Link from "next/link";
 import Typical from "react-typical"
 import { motion } from "framer-motion"
+import React from "react"
+
+const Animation = React.memo(() => {
+  return (<Typical
+        steps={
+          [
+            'Hey there!', 1000,
+            'rei(thedev);', 1000,
+          ]
+        }
+      >
+      </Typical>);
+})
 
 export default function Header() {
   
   return (
     <>
       <div className="font-mono font-extrabold text-gray-900 mx-auto text-center p-4 text-lg">
-        <Typical
-          steps={
-            [
-              'Hey there!', 1000,
-              'rei(thedev);', 1000,
-            ]
-          }
-        >
-        </Typical>
+        <Animation />
       </div>
     
       <motion.div className="bg-zima-200 text-white p-3 ">
