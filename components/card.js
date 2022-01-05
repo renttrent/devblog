@@ -2,8 +2,8 @@ import Link from "next/link"
 
 const Card = ({data}) => {
   return (
-    <div className="container shadow-xl p-3 flex flex-col rounded-lg"> 
-      <div className="text-2xl font-semibold text-gray-800 mt-4">{data.title}</div>
+    <div className="container shadow-xl p-3 flex flex-col rounded-lg outline outline-1 outline-gray-200 mt-4"> 
+      <div className="text-2xl font-semibold text-gray-800 mt-2">{data.title}</div>
       <div className="text-sm font-normal text-gray-400">{data.date}</div>
       <img src={data.cover_img} className="mt-4 object-cover h-52 p-2" />   
       <div className="mt-2 text-lg font-normal text-gray-700">{data.desc}</div>
