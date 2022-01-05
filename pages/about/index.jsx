@@ -27,7 +27,7 @@ export default function About({type, template, service, userid} ) {
       <div className="flex flex-col md:flex-row gap-2 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div className="text-xl mt-4">
           <p className="mb-2">Hey I am <span className="text-zima-200 font-bold">Rei</span> and I like to create cool stuff. I am technically an engineer but I find myself more comfortable
-          as a software "<span className="text-red-500">artisan</span>". I like to have a lot of control over the product, visually and logically.</p>
+          as a software <span className="text-red-500">artisan</span>. I like to have a lot of control over the product, visually and logically.</p>
           <p className="mb-2">I am a fullstack developer but I always enjoy frontend more.</p>
           <p className="mb-2">Lately I have been focusing in the Web3 space as I am very excited by the tech and the community.</p>
           <p>If you want to contact me you can do so in my socials or just write me an email from the form below.</p>
