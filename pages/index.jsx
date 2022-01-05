@@ -13,7 +13,7 @@ export default function Home({blogs, projects}) {
           <span className="block font-sans font-medium text-2xl my-2">
             I am Rei and I make websites and web3 DApps.
           </span>
-          <span className="block font-sans text-lg text-justify p-3 py-7 bg-zima-100 rounded-lg px-8">
+          <div className="block font-sans text-lg text-justify py-7 px-8 bg-zima-100 rounded-lg outline outline-1 outline-gray-200 shadow-sm">
             I like to work on open source projects and make some music or design
             when I have free time. You can send me an email <Link href="mailto: reithedev@protonmail.com"><a className="text-red-500">here</a></Link> or{" "}
             <b>dm</b> me in my socials:
@@ -25,7 +25,7 @@ export default function Home({blogs, projects}) {
                 <a className="outline-none focus:text-red-500"><FaGithub /></a>
               </Link>
             </span>
-          </span>
+          </div>
         </div>
         <div className="construction w-full text-center text-lg text-white
         bg-gradient-to-br from-red-600 to-orange-500 p-4 rounded-xl mt-5 mb-5">
