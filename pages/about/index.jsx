@@ -1,5 +1,5 @@
 import emailjs from "emailjs-com"
-import{ init } from '@emailjs/browser'
+
 import { useState } from "react"
 
 
@@ -63,7 +63,7 @@ export default function About({type, template, service, userid} ) {
 }
 
 export const getServerSideProps = async () => {
-  init(process.env.EMAIL_JS_USER_ID)
+
   return {
     props: {
       type: process.env.EMAIL_JS_TYPE,
