@@ -3,7 +3,7 @@ import { getBlogsMeta } from "../../util/getter";
 
 export default function Blog({blogs}) {
   return (
-    <div className="container w-11/12 md:w-2/3 mx-auto mt-10 max-w-screen-lg">
+    <div className="container w-11/12 md:max-w-screen-lg mx-auto mt-10">
       {/* <div>rei(blog);</div> */}
       <div className="latest-blogs mb-9">
           <div className="font-mono text-3xl font-bold">All Blogs</div>

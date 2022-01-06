@@ -3,7 +3,7 @@ import { getProjectsMeta } from "../../util/getter";
 
 export default function Blog({projects}) {
   return (
-    <div className="container mx-auto mt-10 w-11/12 md:w-2/3">
+    <div className="container mx-auto mt-10 w-11/12 md:max-w-screen-lg">
       {/* <div>rei(blog);</div> */}
       <div className="latest-blogs mb-9">
           <div className="font-mono text-3xl font-bold mt-4">All Projects</div>

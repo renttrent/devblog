@@ -15,14 +15,14 @@ export default function Home({blogs, projects}) {
           </span>
           <div className="block font-sans text-lg text-justify py-7 px-8 bg-zima-100 rounded-lg outline outline-1 outline-gray-200 shadow-sm">
             I like to work on open source projects and make some music or design
-            when I have free time. You can send me an email <Link href="mailto: reithedev@protonmail.com"><a className="text-red-500">here</a></Link> or{" "}
+            when I have free time. You can send me an email <Link href="mailto: reithedev@protonmail.com" passHref><a className="text-red-500">here</a></Link> or{" "}
             <b>dm</b> me in my socials:
             <span className="flex flex-row gap-4 text-zima-200 pt-2">
-              <Link href="https://twitter.com/reithedev">
-                <a className="outline-none focus:text-red-500"><FaTwitter /></a>
+              <Link href="https://twitter.com/reithedev" passHref>
+                <a className="outline-none focus:text-red-500 hover:opacity-60"><FaTwitter size={24}/></a>
               </Link>
-              <Link href="https://github.com/renttrent">
-                <a className="outline-none focus:text-red-500"><FaGithub /></a>
+              <Link href="https://github.com/renttrent" passHref>
+                <a className="outline-none focus:text-red-500 hover:opacity-60"><FaGithub size={24}/></a>
               </Link>
             </span>
           </div>

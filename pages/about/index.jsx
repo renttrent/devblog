@@ -1,6 +1,8 @@
 import emailjs from "emailjs-com"
+import Link from "next/link"
 
 import { useState } from "react"
+import { FaGithub, FaTwitter } from "react-icons/fa"
 
 
 
@@ -31,9 +33,17 @@ export default function About({type, template, service, userid} ) {
           <p className="mb-2">I am a fullstack developer but I always enjoy frontend more.</p>
           <p className="mb-2">Lately I have been focusing in the Web3 space as I am very excited by the tech and the community.</p>
           <p>If you want to contact me you can do so in my socials or just write me an email from the form below.</p>
+          <span className="flex flex-row gap-4 text-zima-200 pt-2">
+            <Link href="https://twitter.com/reithedev" passHref>
+              <a className="outline-none focus:text-red-500 hover:opacity-60"><FaTwitter size={24}/></a>
+            </Link>
+            <Link href="https://github.com/renttrent" passHref>
+              <a className="outline-none focus:text-red-500 hover:opacity-60"><FaGithub size={24}/></a>
+            </Link>
+          </span>
         </div>
         <div>
-          <img src="profile.jpg" className="rounded-full shadow-lg shadow-gray-300" />
+          <img src="profile.jpg" className="rounded-full shadow-lg shadow-gray-300" alt="profile image" />
         </div>
       </div>
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={sendEmail}>
