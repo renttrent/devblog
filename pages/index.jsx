@@ -1,6 +1,6 @@
 import { FaTwitter, FaGithub } from "react-icons/fa"
 import Link from "next/link"
-import { getAllBlogSlugs, getLatestBlogs, getLatestProjects } from "../util/getter";
+import { getLatestBlogs, getLatestProjects } from "../util/getter";
 import Card from "../components/card";
 import { FaBriefcase } from "react-icons/fa"
 
@@ -37,6 +37,7 @@ export default function Home({blogs, projects}) {
           </div>
           <div className="projects flex flex-row gap-4">
             {projects && projects.map((proj, index) => (<Card key={index} data={proj}/>))}
+            {projects.length === 0 && <div className="my-4 text-lg font-medium">No projects yet</div>}
           </div>
           <div className="projects-grid"></div>
         </div>
@@ -44,6 +45,7 @@ export default function Home({blogs, projects}) {
           <div className="font-mono text-3xl font-bold mt-8">Latest Blogs</div>
           <div className="blogs flex flex-row gap-4 flex-wrap lg:flex-nowrap ">
             {blogs && blogs.map((blog, index) => (<Card key={index} data={blog}/>))}
+            {blogs.length === 0 && <div className="my-4 text-lg font-medium">No blogs yet</div>}
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ export default function Blog({projects}) {
           <div className="font-mono text-3xl font-bold mt-4">All Projects</div>
           <div className="blogs flex flex-row gap-4 flex-wrap lg:flex-nowrap">
             {projects && projects.map((blog, index) => (<Card key={index} data={blog}/>))}
+            {projects.length === 0 && <div className="my-4 text-lg font-medium">No projects yet</div>}
           </div>
         </div>
     </div>
