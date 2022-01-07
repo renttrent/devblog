@@ -1,26 +1,18 @@
 import Link from "next/link";
-import Typical from "react-typical"
 import { motion } from "framer-motion"
 import React from "react"
+import { MemoizedAnimation } from "./animation";
 
-const Animation = React.memo(() => {
-  return (<Typical
-        steps={
-          [
-            'Hey there!', 1000,
-            'rei(thedev);', 1000,
-          ]
-        }
-      >
-      </Typical>);
-})
+
+// console.log(Animation)
+// console.log(Animation.type.setDisplayName("Animation"))
 
 export default function Header() {
   
   return (
     <>
       <div className="font-mono font-extrabold text-gray-900 mx-auto text-center p-4 text-lg">
-        <Animation />
+        <MemoizedAnimation />
       </div>
     
       <motion.div className="bg-zima-200 text-white p-3 ">

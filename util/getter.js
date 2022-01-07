@@ -8,8 +8,8 @@ const mark_re = /.*\.md/
 
 export const getBlogsMeta = () => {
   const files = fs.readdirSync(path.join(BLOGS_PATH))
-  return files.map((blog) => {
-    if(!blog.match(mark_re)) return
+  const rv = files.map((blog) => {
+    if(!blog.match(mark_re)) return null
     const file = fs.readFileSync(path.join(`${BLOGS_PATH}/${blog}`))
     const { data } = matter(file)
     const slug = blog.replace(".md", "")
@@ -19,6 +19,9 @@ export const getBlogsMeta = () => {
       ...data
     }
   })
+
+  if (rv.includes(null)) return []
+  return rv
 }
 
 export const getLatestBlogs = () => {
@@ -28,10 +31,13 @@ export const getLatestBlogs = () => {
 
 export const getAllBlogSlugs = () => {
   const files = fs.readdirSync(path.join(BLOGS_PATH))
-  return files.map((blog) => { 
-    if(!blog.match(mark_re)) return
+  const rv = files.map((blog) => { 
+    if(!blog.match(mark_re)) return null
     return { params: { slug: blog.replace(".md", "")} }
   })
+
+  if (rv.includes(null)) return []
+  return rv
 }
 
 export const getBlogBySlug = (slug) => {
@@ -46,7 +52,7 @@ export const getBlogBySlug = (slug) => {
 export const getProjectsMeta = () => {
   const files = fs.readdirSync(path.join(PROJECTS_PATH))
   return files.map((proj) => {
-    if(!proj.match(mark_re)) return
+    if(!proj.match(mark_re)) return null
     const file = fs.readFileSync(path.join(`${PROJECTS_PATH}/${proj}`))
     const { data } = matter(file)
     const slug = proj.replace(".md", "")
@@ -66,10 +72,14 @@ export const getLatestProjects = () => {
 
 export const getAllProjectSlugs = () => {
   const files = fs.readdirSync(path.join(PROJECTS_PATH))
-  return files.map((proj) => { 
-    if(!proj.match(mark_re)) return
+  const rv = files.map((proj) => { 
+    if(!proj.match(mark_re)) return null
     return {params: { slug: proj.replace(".md", "")}}
   })
+
+  if (rv.includes(null)) return []
+
+  return rv
 }
 
 export const getProjectBySlug = (slug) => {
