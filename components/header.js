@@ -11,7 +11,7 @@ export default function Header() {
   
   return (
     <>
-      <div className="font-mono font-extrabold text-gray-900 mx-auto text-center p-4 text-lg">
+      <div className="font-mono font-extrabold text-gray-900 dark:text-gray-50 dark:bg-stone-900 mx-auto text-center p-4 text-lg">
         <MemoizedAnimation />
       </div>
     
