@@ -1,4 +1,4 @@
-import { FaTwitter, FaGithub } from "react-icons/fa"
+import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa"
 import Link from "next/link"
 import { getLatestBlogs, getLatestProjects } from "../util/getter";
 import Card from "../components/card";
@@ -28,13 +28,16 @@ export default function Home({blogs, projects, dark, setDark}) {
               <Link href="https://github.com/renttrent" passHref>
                 <a className="outline-none focus:text-red-500 hover:opacity-60"><FaGithub size={24}/></a>
               </Link>
+              <Link href="https://www.linkedin.com/in/rei-b-95894bb6/" passHref>
+                <a className="outline-none focus:text-red-500 hover:opacity-60"><FaLinkedinIn size={24}/></a>
+              </Link>
             </span>
           </div>
         </div>
-        <div className="construction w-full text-center text-lg text-white
+        {/* <div className="construction w-full text-center text-lg text-white
         bg-gradient-to-br from-red-600 to-orange-500 p-4 rounded-xl mt-5 mb-5">
           Website under construction! <FaBriefcase className="inline-block mb-1 ml-2" />
-        </div>
+        </div> */}
         <div className="latest-projects">
           <div className="font-mono text-3xl font-bold mt-8">
             Latest Projects

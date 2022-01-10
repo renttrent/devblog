@@ -2,7 +2,7 @@ import emailjs from "emailjs-com"
 import Link from "next/link"
 
 import { useState } from "react"
-import { FaGithub, FaTwitter } from "react-icons/fa"
+import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa"
 
 
 
@@ -42,6 +42,9 @@ export default function About({type, template, service, userid} ) {
               </Link>
               <Link href="https://github.com/renttrent" passHref>
                 <a className="outline-none focus:text-red-500 hover:opacity-60"><FaGithub size={24}/></a>
+              </Link>
+              <Link href="https://www.linkedin.com/in/rei-b-95894bb6/" passHref>
+                <a className="outline-none focus:text-red-500 hover:opacity-60"><FaLinkedinIn size={24}/></a>
               </Link>
             </span>
           </div>
