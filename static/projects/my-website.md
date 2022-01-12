@@ -3,7 +3,7 @@ type: projects
 title: My Website
 date: January 5 2022
 desc: This is my first public project and my first website
-cover_img: https://avatars.githubusercontent.com/u/37352219?v=4
+cover_img: https://github.com/renttrent.png
 ---
 
 # My website
