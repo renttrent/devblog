@@ -1,5 +1,5 @@
 import Card from "../../components/card";
-import { getBlogsMeta } from "../../util/getter";
+import { getBlogs } from "../../util/contentful_services";
 
 export default function Blog({blogs}) {
   return (
@@ -9,7 +9,7 @@ export default function Blog({blogs}) {
         <div className="latest-blogs mb-9">
             <div className="font-mono text-3xl font-bold">All Blogs</div>
             <div className="blogs flex flex-row gap-4 flex-wrap lg:flex-nowrap">
-              {blogs && blogs.map((blog, index) => (<Card key={index} data={blog}/>))}
+              {blogs && blogs.map((blog) => (<Card key={blog.sys.id} data={blog.fields} type={blog.sys.contentType.sys.id}/>))}
               {blogs.length === 0 && <div className="my-4 text-lg font-medium">No blogs yet</div>}
             </div>
           </div>
@@ -18,8 +18,8 @@ export default function Blog({blogs}) {
   );
 }
 
-export const getStaticProps = () => {
-  const blogs = getBlogsMeta()  
+export const getStaticProps = async () => {
+  const blogs = await getBlogs()  
   return {
     props: {
       blogs
