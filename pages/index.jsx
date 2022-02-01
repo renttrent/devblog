@@ -64,6 +64,7 @@ export const getStaticProps = async () => {
     props: {
       blogs: latest_blogs.slice(0, 4),
       projects: latest_projects.slice(0, 4),
-    }
+    },
+    revalidate: 10
   }
 }
