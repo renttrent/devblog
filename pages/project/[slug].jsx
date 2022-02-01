@@ -1,6 +1,6 @@
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import Image from "next/image"
 import { getProjectBySlug, getProjects } from "../../util/contentful_services"
+import { ReactMarkdown } from "react-markdown/lib/react-markdown"
 
 export const getStaticPaths = async () => {
   const projects = await getProjects()
@@ -47,8 +47,9 @@ export default function Project({project}) {
         dark:prose-headings:text-gray-100
         dark:prose-p:text-gray-300
         dark:prose-a:text-indigo-400
-        dark:prose-li:text-gray-400">
-          <div dangerouslySetInnerHTML={{ __html: documentToHtmlString(project.fields.content) }}></div>
+        dark:prose-li:text-gray-400
+        pb-10">
+          <ReactMarkdown>{project.fields.content}</ReactMarkdown>
         </div>
       </div>
     </div>

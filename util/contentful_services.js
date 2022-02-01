@@ -7,12 +7,12 @@ export const client = createClient({
 });
 
 export const getProjects = async () => {
-  const projects = await client.getEntries({content_type: "project", order: "fields.date"})
+  const projects = await client.getEntries({content_type: "project", order: "-fields.date"})
   return projects.items
 }
 
 export const getBlogs = async () => {
-  const blogs = await client.getEntries({content_type: "blog", order: "fields.date"})
+  const blogs = await client.getEntries({content_type: "blog", order: "-fields.date"})
   return blogs.items
 }
 

@@ -37,7 +37,7 @@ export default function Blog({blog}) {
 
   return (
     <div className="dark:bg-stone-900 dark:text-gray-50 w-full">
-      <div className="container mx-auto mt-10 w-11/12 md:max-w-screen-lg">
+      <div className="container mx-auto pt-10 w-11/12 md:max-w-screen-lg">
         <div className="title font-bold text-2xl mb-2">{blog.fields.title}</div>
         <div className="date font-semibold text-lg text-gray-600 dark:text-gray-400">{date}</div>
         <div className="image mt-4">
