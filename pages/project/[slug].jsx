@@ -14,7 +14,7 @@ export const getStaticPaths = async () => {
   })
   return {
     paths,
-    fallback: false
+    fallback: 'blocking'
   }
 }
 
@@ -23,7 +23,8 @@ export const getStaticProps = async  ({ params: { slug }}) => {
   return {
     props: {
       project
-    }
+    },
+    revalidate: 10
   }
 }
 
